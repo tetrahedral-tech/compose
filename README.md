@@ -1,2 +1,2 @@
 # compose
-Docker compose file
+Docker Compose file
