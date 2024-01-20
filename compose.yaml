@@ -41,3 +41,5 @@ services:
     hostname: redis
     networks:
       - auto-trading
+networks:
+  auto-trading:
