@@ -37,9 +37,14 @@ services:
       - algorithm-server
   redis:
     image: redis:alpine
+    command: redis-server --save 60 1 --loglevel warning
     restart: always
     hostname: redis
     networks:
       - auto-trading
+    volumes:
+      - redis-store:/data
 networks:
   auto-trading:
+volumes:
+  redis-store:
