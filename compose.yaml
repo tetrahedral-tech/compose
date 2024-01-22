@@ -19,17 +19,17 @@ services:
       - auto-trading
     depends_on:
       - redis
-      - price-collector
-  price-collector:
-    image: ghcr.io/auto-trading-temp-name/price-collector:master
-    hostname: price-collector
-    restart: always
-    ports:
-      - 6000:80
-    networks:
-      - auto-trading
-    depends_on:
-      - redis
+  #     - price-collector
+  # price-collector:
+  #   image: ghcr.io/auto-trading-temp-name/price-collector:master
+  #   hostname: price-collector
+  #   restart: always
+  #   ports:
+  #     - 6000:80
+  #   networks:
+  #     - auto-trading
+  #   depends_on:
+  #     - redis
   plot-bot:
     image: ghcr.io/auto-trading-temp-name/plot-bot:master
     restart: always
