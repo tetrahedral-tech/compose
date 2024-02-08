@@ -22,7 +22,6 @@ services:
       - price-collector
   price-collector:
     image: ghcr.io/auto-trading-temp-name/price-collector:master
-    hostname: price-collector
     restart: always
     ports:
       - 6000:80
@@ -32,6 +31,7 @@ services:
       - redis
   transactions:
     image: ghcr.io/auto-trading-temp-name/transactions:master
+    hostname: transactions
     restart: always
     networks:
       - auto-trading
