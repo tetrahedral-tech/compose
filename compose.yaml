@@ -10,7 +10,7 @@ services:
       - redis
       - algorithm-server
   algorithm-server:
-    image: ghcr.io/auto-trading-temp-name/algorithm-server:transaction-service
+    image: ghcr.io/auto-trading-temp-name/algorithm-server:master
     hostname: algorithm-server
     restart: always
     ports:
