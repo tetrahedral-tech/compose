@@ -7,7 +7,6 @@ services:
     networks:
       - auto-trading
     depends_on:
-      - redis
       - algorithm-server
   algorithm-server:
     image: ghcr.io/auto-trading-temp-name/algorithm-server:master
@@ -37,7 +36,6 @@ services:
       - auto-trading
     depends_on:
       - algorithm-server
-      - price-collector
   plot-bot:
     image: ghcr.io/auto-trading-temp-name/plot-bot:master
     restart: always
