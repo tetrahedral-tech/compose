@@ -1,6 +1,6 @@
 services:
   main-server:
-    image: ghcr.io/auto-trading-temp-name/main-server:master
+    image: ghcr.io/tetrahedral-tech/main-server:master
     restart: always
     ports:
       - 80:80
@@ -9,7 +9,7 @@ services:
     depends_on:
       - algorithm-server
   algorithm-server:
-    image: ghcr.io/auto-trading-temp-name/algorithm-server:master
+    image: ghcr.io/tetrahedral-tech/algorithm-server:v1.0.0
     hostname: algorithm-server
     restart: always
     ports:
@@ -20,14 +20,14 @@ services:
       - redis
       - price-collector
   price-collector:
-    image: ghcr.io/auto-trading-temp-name/price-collector:master
+    image: ghcr.io/tetrahedral-tech/price-collector:v1.0.0
     restart: always
     networks:
       - auto-trading
     depends_on:
       - redis
   transactions:
-    image: ghcr.io/auto-trading-temp-name/transactions:master
+    image: ghcr.io/tetrahedral-tech/transactions:master
     hostname: transactions
     restart: always
     networks:
@@ -35,7 +35,7 @@ services:
     depends_on:
       - algorithm-server
   plot-bot:
-    image: ghcr.io/auto-trading-temp-name/plot-bot:master
+    image: ghcr.io/tetrahedral-tech/plot-bot:master
     restart: always
     depends_on:
       - algorithm-server
