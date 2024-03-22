@@ -26,14 +26,6 @@ services:
       - auto-trading
     depends_on:
       - redis
-  transactions:
-    image: ghcr.io/tetrahedral-tech/transactions:master
-    hostname: transactions
-    restart: always
-    networks:
-      - auto-trading
-    depends_on:
-      - algorithm-server
   plot-bot:
     image: ghcr.io/tetrahedral-tech/plot-bot:master
     restart: always
